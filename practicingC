@@ -4,6 +4,8 @@ int main()
 {
    int m , n , i , j ,a , b , c , d ;
    int arr1[m][n] , arr2[m][n] , matSum[m][n] ;
+   printf("Enter number of rows and coloumn in matrix");
+   scanf("%d%d",&m,&n);
    printf("Enter First Matrix");
    for (i=0 ; i<m ; i++){
 
