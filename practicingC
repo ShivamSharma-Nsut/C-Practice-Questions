@@ -2,32 +2,59 @@
 
 int main()
 {
-   int m , n , i , j ,a , b , c , d ;
-   int arr1[m][n] , arr2[m][n] , matSum[m][n] ;
-   printf("Enter number of rows and coloumn in matrices");
-   scanf("%d%d",&m,&n);
-   printf("Enter First Matrix");
-   for (i=0 ; i<m ; i++){
-
-        for (j=0 ; j<n ; j++)
-            scanf("%d",&arr1[i][j]);
-            printf("\n");
+   int i , j , m , n ,u , v , k , l;
+   int mat1[10][10] , mat2[10][10] , mulMat[10][10];
+   
+   printf("enter order of first matrix\n");
+   scanf("%d%d" , &m,&n);
+   printf("enter order of second matrix\n");
+   scanf("%d%d" , &u,&v);
+   
+   printf("enter first matrix\n");
+   for (i = 0 ; i<m ; i++) {
+       for(j = 0 ; j<n ; j++) {
+        scanf("%d",&mat1[i][j]);
+       }
    }
-
-   printf("Enter Second Matrix");
-   for (a=0 ; a<m ; a++){
-
-        for (b=0 ; b<n ; b++)
-            scanf("%d",&arr2[a][b]);
-            printf("\n");
+   printf("enter second matrix\n");
+   for (i = 0 ; i<u ; i++) {
+       for(j = 0 ; j<v ; j++) {
+        scanf("%d",&mat2[i][j]);
+       }
    }
-   for (c=0 ; c<m ; c++){
-
-        for (d=0 ; d<n ; d++)
-            matSum[c][d] = arr1[c][d] + arr2[c][d] ;
-            printf("%d",&matSum[c][d]);
-            printf("\n");
+   
+   for (i = 0 ; i<m ; i++)
+   {
+       for(j = 0 ; j<v ; j++)
+       mulMat[i][j] = 0 ;
    }
+   
+   if (n == u)
+   {
+       for (i = 0 ; i<m ; i++)
+       {
+           for (j = 0 ; j<v ; j++)
+           {
+               for (k = 0 ; k<n ; k++)
+               {
+                   mulMat[i][j] += mat1[i][k] * mat2[k][j] ;
+               }
+           }
+       }
+   }
+   else
+        printf("multiplication not possible");
+       
+    printf("The resulting matrix is: \n");    
+    
+   for (k = 0 ; k<m ; k++)
+   {
+       for(l = 0 ; l<v ; l++)
+       printf("%d ",mulMat[k][l]);
+       printf("\n");
+       
+   }
+   
 
     return 0;
 }
