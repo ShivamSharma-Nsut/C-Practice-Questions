@@ -1,0 +1,34 @@
+
+#include <stdio.h>
+int fact(int a);
+int c(int p , int q);
+int main()
+
+{
+    int i , j , n , k,x; 
+    scanf("%d",&n);
+    for (i=0 ; i<n ; i++){
+        for (k=0 ; k<n-i ; k++){
+            printf(" ");
+        }
+        for (j = 0 ; j<=i ; j++){
+            x =   fact(i)/( fact(i-j) * fact(j) );
+            printf(" %d",x);
+        }
+        printf("\n");
+    }
+    return 0 ;
+    }
+ 
+    int fact (int a)
+    {
+       int f = 1, k;
+       for (k=1 ; k<=a ; k++)
+       f = f * k ;
+       return f ;
+    }
+       
+   
+   
+
+    
